@@ -1,0 +1,73 @@
+.tabs {
+  width: 95%;
+  margin-top: 30px;
+}
+
+.tabNavigation {
+  list-style: none;
+}
+
+.tabNavigation li {
+  float: left;
+}
+
+.tabNavigation li a {
+  padding: 8px 15px;
+  background-color: $background-element-color;
+  color: $main-color;
+  font-size: 1.3em;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid #000;
+  border-radius: 3px 3px 0 0;
+}
+
+.tabNavigation li a.selected,
+.tabNavigation li a.selected:hover {
+  background: rgba($main-color, 0.4);
+  color: #000;
+}
+
+.tabNavigation li a:hover {
+  background: $hover-background;
+}
+
+ul.tabNavigation li a:focus {
+  outline: 0;
+}
+
+.tabs-content {
+  padding: 15px;
+  margin-top: 8px;
+  font-size: 1.2em;
+  box-shadow:0 1px 3px rgba(0,0,0,0.25);
+  border-radius: 0 3px 3px 3px;
+  background: rgba($main-color, 0.1);
+  min-height: 150px;
+}
+
+@include respond-to(medium-screens) {
+  .tabs {
+    width: 80%;
+  }
+}
+
+@include respond-to(large-screens) {
+  .tabs {
+    width: 70%;
+
+    .tabs-content {
+      font-size: 1em;
+    }
+  }
+}
+
+@include respond-to(wide-screens) {
+  .tabs {
+    width: 70%;
+
+    .tabs-content {
+      font-size: 1em;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+.accordion {
+  width: 95%;
+  overflow:hidden;
+  box-shadow:0 1px 3px rgba(0,0,0,0.25);
+  border-radius:3px;
+  background: rgba($main-color, 0.1);
+
+  dt {
+    a {
+      width: 100%;
+      padding: 15px;
+      display: inline-block;
+      border-bottom: 1px solid #1a1a1a;
+      background: $background-element-color;
+      transition: all linear 0.15s;
+      font-size: 1.3em;
+      font-weight: 700;
+      text-shadow: 0 1px 0 #1a1a1a;
+      color: $main-color;
+      text-decoration: none;
+
+      &:hover, &:active {
+        background: $hover-background;
+        text-decoration: none;
+      }
+    }
+  }
+
+  dd {
+    border-top: 0;
+    font-size: 1.2em;
+    padding: 15px;
+  }
+}
+
+@include respond-to(medium-screens) {
+  .accordion {
+    width: 80%;
+  }
+}
+
+@include respond-to(large-screens) {
+  .accordion {
+    width: 70%;
+
+    dd {
+      font-size: 1em;
+    }
+  }
+}
+
+@include respond-to(wide-screens) {
+  .accordion {
+    width: 70%;
+
+    dd {
+      font-size: 1em;
+    }
+  }
+}

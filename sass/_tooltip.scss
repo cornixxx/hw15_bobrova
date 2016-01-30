@@ -1,0 +1,30 @@
+.tooltip-sample {
+  font-size: 1.2em;
+}
+
+.tooltip::after {
+  content: attr(data-tooltip);
+  background: rgba($background-element-color, 0.7);
+  border-radius: 8px 8px 8px 0;
+  min-width: 200px;
+  color: $main-color;
+  font-size: 0.9em;
+  position: absolute;
+  top: -40px;
+  left: -10px;
+  opacity: 0;
+  display: block;
+  padding: 3px 7px;
+  transition: all 0.4s ease-in-out;
+}
+
+.tooltip:hover::after {
+  opacity: 1;
+}
+
+.tooltip {
+  cursor: help;
+  color: $main-color;
+  font-weight: 700;
+  position: relative;
+}
