@@ -47,17 +47,7 @@ $(function() {
 
         e.preventDefault();
     });
-});
 
-$(function() {
-    $('#toggle-link').click(function(event) {
-        $('#message').toggle();
-    });
-    $(document).click(function (event) {
-        if ($(event.target).closest('#message').length == 0 && $(event.target).attr('id') != 'toggle-link') {
-            $('#message').hide();
-        }
-    });
 });
 
 
