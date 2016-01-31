@@ -31,19 +31,48 @@ function openFirstPanel(){
 
 /* Popup */
 
+$(function() {
+    //----- OPEN
+    $('[data-popup-open]').on('click', function(e)  {
+        var targeted_popup_class = jQuery(this).attr('data-popup-open');
+        $('[data-popup="' + targeted_popup_class + '"]').fadeIn(500);
+
+        e.preventDefault();
+    });
+
+    //----- CLOSE
+    $('[data-popup-close]').on('click', function(e)  {
+        var targeted_popup_class = jQuery(this).attr('data-popup-close');
+        $('[data-popup="' + targeted_popup_class + '"]').fadeOut(500);
+
+        e.preventDefault();
+    });
+});
+
+$(function() {
+    $('#toggle-link').click(function(event) {
+        $('#message').toggle();
+    });
+    $(document).click(function (event) {
+        if ($(event.target).closest('#message').length == 0 && $(event.target).attr('id') != 'toggle-link') {
+            $('#message').hide();
+        }
+    });
+});
+
 
 
 /* Tabs */
 
 $(function () {
-    var tabContainers = $('div.tabs > div'); // получаем массив контейнеров
-    tabContainers.hide().filter(':first').show(); // прячем все, кроме первого
-    // далее обрабатывается клик по вкладке
+    var tabContainers = $('div.tabs > div');
+    tabContainers.hide().filter(':first').show();
+
     $('div.tabs ul.tabNavigation a').click(function () {
-        tabContainers.hide(); // прячем все табы
-        tabContainers.filter(this.hash).show(400); // показываем содержимое текущего
-        $('div.tabs ul.tabNavigation a').removeClass('selected'); // у всех убираем класс 'selected'
-        $(this).addClass('selected'); // текушей вкладке добавляем класс 'selected'
+        tabContainers.hide();
+        tabContainers.filter(this.hash).show(400);
+        $('div.tabs ul.tabNavigation a').removeClass('selected');
+        $(this).addClass('selected');
         return false;
     }).filter(':first').click();
 });
