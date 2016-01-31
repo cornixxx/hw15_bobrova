@@ -1,0 +1,61 @@
+.slide-sample .container {
+  position: relative;
+}
+
+.slide-sample .flexslider.fullscreen-slider  {
+  background: transparent;
+  border: 4px solid transparent;
+  border-bottom: none;
+  margin: 0;
+
+  .slides img {
+    width: 40%;
+    float: right;
+    margin: 20px;
+  }
+
+  h3 {
+    margin: 30px;
+    font-size: 1.8em;
+  }
+
+  p {
+    margin: 30px;
+    font-size: 1.2em;
+  }
+}
+
+.slide-sample .flexslider.fullscreen-slider  .slide1 {
+  background: rgba($main-color, 0.2);
+}
+
+.slide-sample .flexslider.fullscreen-slider  .slide2 {
+  background: #b0fdb9;
+}
+
+.flexslider.fullscreen-slider+.custom-navigation {
+  margin-top: 10px;
+
+  a{
+    color: $main-color;
+    font-size: 1.1em;
+    font-weight: 700;
+  }
+
+  .flex-prev {
+    float: left;
+    margin-left: 25px;
+  }
+
+  .flex-next {
+    float: right;
+    margin-right: 25px;
+  }
+
+  .flex-control-nav {
+    width: auto;
+    bottom: -30px;
+    left: 50%;
+  }
+}
+
